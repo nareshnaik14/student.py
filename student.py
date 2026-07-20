@@ -356,7 +356,7 @@ sleep_hours = st.number_input(
 if st.button("Predict"):
 
     new_data = pd.DataFrame(
-        [[student_id,study_hours, attendance, assignment_score, sleep_hours]],
+        [[study_hours, attendance, assignment_score, sleep_hours]],
         columns=X.columns
     )
 
