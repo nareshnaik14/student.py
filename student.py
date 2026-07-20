@@ -113,7 +113,7 @@ df['result'] = le.fit_transform(df['result'])
 
 #Step 6 — Define Features and Target
 
-X = df.drop('result', axis=1)
+X = df.drop(['student_id','result'], axis=1)
 
 print("Training Columns:", X.columns.tolist())
 
