@@ -115,6 +115,8 @@ df['result'] = le.fit_transform(df['result'])
 
 X = df.drop('result', axis=1)
 
+print("Training Columns:", X.columns.tolist())
+
 y = df['result']
 
 #Step 7 — Train Test Split
@@ -317,6 +319,10 @@ plot_tree(
 
 plt.show()
 
+
+
+
+
 st.header("🔮 Predict Student Result")
 
 study_hours = st.number_input(
@@ -349,14 +355,15 @@ sleep_hours = st.number_input(
 
 if st.button("Predict"):
 
-    X= pd.DataFrame({
+    new_data= pd.DataFrame({
         "study_hours":[study_hours],
         "attendance":[attendance],
         "assignment_score":[assignment_score],
         "sleep_hours":[sleep_hours]
+       columns=X.columns
     })
 
-    prediction = balanced_model.predict(X)
+    prediction = balanced_model.predict(new_data)
 
     result = le.inverse_transform(prediction)
 
