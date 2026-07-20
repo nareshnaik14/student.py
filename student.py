@@ -355,13 +355,10 @@ sleep_hours = st.number_input(
 
 if st.button("Predict"):
 
-    new_data= pd.DataFrame({
-        "study_hours":[study_hours],
-        "attendance":[attendance],
-        "assignment_score":[assignment_score],
-        "sleep_hours":[sleep_hours],
-       columns=X.columns
-    })
+      new_data = pd.DataFrame(
+        [[study_hours, attendance, assignment_score, sleep_hours]],
+        columns=X.columns
+    )
 
     prediction = balanced_model.predict(new_data)
 
