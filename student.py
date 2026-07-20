@@ -360,7 +360,8 @@ if st.button("Predict"):
         columns=X.columns
     )
 
-    prediction = balanced_model.predict(new_data)
+        prediction = balanced_model.predict(new_data)
+
 
     result = le.inverse_transform(prediction)
 
