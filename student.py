@@ -355,13 +355,12 @@ sleep_hours = st.number_input(
 
 if st.button("Predict"):
 
-      new_data = pd.DataFrame(
+    new_data = pd.DataFrame(
         [[study_hours, attendance, assignment_score, sleep_hours]],
         columns=X.columns
     )
 
-        prediction = balanced_model.predict(new_data)
-
+    prediction = balanced_model.predict(new_data)
 
     result = le.inverse_transform(prediction)
 
