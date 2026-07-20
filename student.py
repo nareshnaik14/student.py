@@ -359,7 +359,7 @@ if st.button("Predict"):
         "study_hours":[study_hours],
         "attendance":[attendance],
         "assignment_score":[assignment_score],
-        "sleep_hours":[sleep_hours]
+        "sleep_hours":[sleep_hours],
        columns=X.columns
     })
 
